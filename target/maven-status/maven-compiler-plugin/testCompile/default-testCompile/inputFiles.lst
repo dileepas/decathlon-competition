@@ -1,0 +1,6 @@
+/home/dileepas/work/decathlon-competition/src/test/java/com/decathlon_competition/services/process/DecathlonPointsCalculatorTest.java
+/home/dileepas/work/decathlon-competition/src/test/java/com/decathlon_competition/services/process/FieldEventCalculatorTest.java
+/home/dileepas/work/decathlon-competition/src/test/java/com/decathlon_competition/services/reader/CSVFileReaderTest.java
+/home/dileepas/work/decathlon-competition/src/test/java/com/decathlon_competition/services/process/TrackEventCalculatorTest.java
+/home/dileepas/work/decathlon-competition/src/test/java/com/decathlon_competition/services/process/DecathlonPlaceDeciderTest.java
+/home/dileepas/work/decathlon-competition/src/test/java/com/decathlon_competition/handler/DecathlonHandlerTest.java

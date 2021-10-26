@@ -1,0 +1,6 @@
+com/decathlon_competition/handler/DecathlonHandlerTest.class
+com/decathlon_competition/services/process/TrackEventCalculatorTest.class
+com/decathlon_competition/services/process/DecathlonPlaceDeciderTest.class
+com/decathlon_competition/services/reader/CSVFileReaderTest.class
+com/decathlon_competition/services/process/DecathlonPointsCalculatorTest.class
+com/decathlon_competition/services/process/FieldEventCalculatorTest.class
