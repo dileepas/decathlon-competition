@@ -26,7 +26,9 @@ public class Main {
         DecathlonHandler handler = new DecathlonHandler(reader, fileWriter, pointsCalculator, decider);
 
         try {
+            System.out.println("---------Start-------");
             handler.process(sourceFilePath, destinationFilePath);
+            System.out.println("---------End-------");
         } catch (IOException | FileCreationException e) {
             e.printStackTrace();
         }

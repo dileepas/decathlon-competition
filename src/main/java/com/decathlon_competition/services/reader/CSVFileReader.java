@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface CSVFileReader {
     /**
-     *
+     * This Method is responsible to read the file from provided path and extract list of athletes and record.
      * @param path provided
-     * @return
+     * @return  List of Athletes and their records
      * @throws IOException
      * @throws NumberFormatException
      */

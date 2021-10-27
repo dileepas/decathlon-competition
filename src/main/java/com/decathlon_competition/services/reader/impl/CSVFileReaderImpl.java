@@ -13,18 +13,21 @@ import java.util.List;
 
 public class CSVFileReaderImpl implements CSVFileReader {
 
-    private final String SPLITTER = ";";
+    private final String DELIMITER = ";";
 
     @Override
     public List<Athlete> getRecordsFromFile(String path) throws IOException, NumberFormatException {
         String line;
         List<Athlete> athletes = new ArrayList<>();
         System.out.println("Read file from " + path);
-        BufferedReader br = new BufferedReader(new FileReader(path));
-        while ((line = br.readLine()) != null) {
-            String[] athleteEntry = line.split(SPLITTER);
-            athletes.add(getAthlete(athleteEntry));
+
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            while ((line = br.readLine()) != null) {
+                String[] athleteEntry = line.split(DELIMITER);
+                athletes.add(getAthlete(athleteEntry));
+            }
         }
+
         return athletes;
     }
 
