@@ -4,8 +4,9 @@ import com.decathlon_competition.domain.Athlete;
 import com.decathlon_competition.domain.Event;
 import com.decathlon_competition.enums.PointsSystemEnum;
 import com.decathlon_competition.enums.TypeOfMeasureEnum;
-import com.decathlon_competition.services.process.EventCalculator;
+import com.decathlon_competition.services.process.FieldEventCalculator;
 import com.decathlon_competition.services.process.PointsCalculator;
+import com.decathlon_competition.services.process.TrackEventCalculator;
 
 import java.util.List;
 
@@ -21,19 +22,15 @@ public class DecathlonPointsCalculator implements PointsCalculator {
         double total = 0;
         for (Event event : events) {
             PointsSystemEnum eventPoints = event.getPoints();
-            total = total + getEventCalculator(eventPoints.getUnitOfMeasure()).calculate(
-                    eventPoints.getA(),
-                    eventPoints.getB(),
-                    eventPoints.getC(),
-                    event.getPerformance());
+            total = total + getEventTotal(eventPoints, event.getPerformance());
         }
         return total;
     }
 
-    private EventCalculator getEventCalculator(TypeOfMeasureEnum typeOfMeasureEnum) {
-        if (typeOfMeasureEnum == TypeOfMeasureEnum.TIME)
-            return new TrackEventCalculator();
+    private double getEventTotal(PointsSystemEnum eventPoints, double performance) {
+        if (eventPoints.getUnitOfMeasure() == TypeOfMeasureEnum.TIME)
+            return TrackEventCalculator.calculate(eventPoints.getA(),eventPoints.getB(),eventPoints.getC(),performance);
         else
-            return new FieldEventCalculator();
+            return FieldEventCalculator.calculate(eventPoints.getA(),eventPoints.getB(),eventPoints.getC(),performance);
     }
 }
